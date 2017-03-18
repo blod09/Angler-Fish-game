@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
 
     private float targetY;
-    private float epsilon = 0.2f;
 
     private void Awake ()
     {
@@ -85,6 +84,9 @@ public class PlayerMovement : MonoBehaviour {
 
     public void IncreaseSpeed (float ammount)
     {
-        horizontalSpeed *= ammount;
+        float oldSpeed = horizontalSpeed;
+        horizontalSpeed += ammount;
+
+        Debug.Log ("Speed changed from: " + oldSpeed + " to: " + horizontalSpeed);
     }
 }

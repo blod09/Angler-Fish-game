@@ -30,7 +30,7 @@ public class PlayerCollisions : MonoBehaviour {
     private void HandleFood (Food foodObject)
     {
         playerMovement.IncreaseSpeed (foodObject.SpeedIncrease);
-        lightController.changeLightLevel (foodObject.LightIncrease);
+       // lightController.changeLightLevel (foodObject.LightIncrease);
 
         foodObject.Kill ();
     }

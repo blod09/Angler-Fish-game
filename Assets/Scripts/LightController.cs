@@ -4,59 +4,54 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour {
 
-    [SerializeField]
     Light myLight;
 
+    [SerializeField][Range (0.0f, 1.0f)]
+    private float lightDecreaseOverTime;
+
+
+    [Space][Header("Technical Parameters")]
     [SerializeField]
     private float maxLightRange;
     [SerializeField]
     private float minLightRange;
     [SerializeField]
     private float defaultLightRange;
+
     [SerializeField]
-    private float decreaseOverTime = .1f;
-
-
-    private float lightLevel;
-
-    public float MaxLightRange
-    {
-        get { return maxLightRange; }
-    }
-
-    public float MinLightRange
-    {
-        get { return minLightRange; }
-    }
-
-    public float LightLevel
-    {
-        get { return lightLevel; }
-    }
+    private float maxLightAngle;
+    [SerializeField]
+    private float minLightAngle;
+    [SerializeField]
+    private float defaultLightAngle;
 
 
     private void Awake ()
     {
+        myLight = GetComponent<Light> ();
         myLight.range = defaultLightRange;
-        lightLevel = myLight.range;
+        myLight.spotAngle = defaultLightAngle;
     }
 
     private void Update ()
     {
-        lightLevel = myLight.range;
-        changeLightLevel (-decreaseOverTime * lightLevel);
-        //if (Input.GetKeyDown (KeyCode.Space))
-        //    changeLightLevel (10f);
+        changeLightOverTime ();
+
+        if (Input.GetKeyDown (KeyCode.Space))
+            changeLightLevel (maxLightRange,maxLightAngle);
     }
 
-    public void changeLightLevel (float ammount)
+    public void changeLightLevel (float range, float angle)
     {
-        if ((ammount < 0 && myLight.range > minLightRange) || (ammount > 0 && myLight.range < maxLightRange - ammount))
-        {
-            myLight.range += ammount;
-        }
-        else if (myLight.range + ammount > maxLightRange)
-            myLight.range = maxLightRange;
+        myLight.range = range;
+        myLight.spotAngle = angle;
+    }
+
+    public void changeLightOverTime ()
+    {
+        myLight.range = Mathf.Lerp (myLight.range, minLightRange, lightDecreaseOverTime);
+        myLight.spotAngle = Mathf.Lerp (myLight.spotAngle, minLightAngle, lightDecreaseOverTime);
+
     }
 
 

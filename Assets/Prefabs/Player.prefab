@@ -23,26 +23,7 @@ GameObject:
   - component: {fileID: 64890320638411816}
   - component: {fileID: 23579279172634598}
   m_Layer: 0
-  m_Name: PlayerSprite
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1373164443714578
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4372181462082822}
-  - component: {fileID: 33255444705385336}
-  - component: {fileID: 64099475097316304}
-  - component: {fileID: 23375005939765184}
-  - component: {fileID: 114633425970838752}
-  m_Layer: 0
-  m_Name: LightCircle
+  m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4429671147629734}
+  - component: {fileID: 114627832988855626}
   - component: {fileID: 108402757977338794}
   m_Layer: 0
   m_Name: Light
@@ -72,7 +54,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365080378795346}
-  - component: {fileID: 114719090729727600}
   - component: {fileID: 114243133221536450}
   - component: {fileID: 114213726731246504}
   - component: {fileID: 114138605307669802}
@@ -97,22 +78,8 @@ Transform:
   m_Children:
   - {fileID: 4429671147629734}
   - {fileID: 4435580778141168}
-  - {fileID: 4372181462082822}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4372181462082822
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373164443714578}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: -1}
-  m_LocalScale: {x: 450, y: 450, z: 450}
-  m_Children: []
-  m_Father: {fileID: 4365080378795346}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4429671147629734
 Transform:
@@ -120,13 +87,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1515235118749982}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0.7, z: -7.4}
-  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: -6.21, y: 0.7, z: -7.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4365080378795346}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4435580778141168
 Transform:
   m_ObjectHideFlags: 1
@@ -140,37 +107,6 @@ Transform:
   m_Father: {fileID: 4365080378795346}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23375005939765184
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373164443714578}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 53e796ac31576474e884427a3378627b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &23579279172634598
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -202,13 +138,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33255444705385336
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373164443714578}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33867045700243860
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -250,20 +179,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!64 &64099475097316304
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373164443714578}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &64890320638411816
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -286,10 +201,10 @@ Light:
   m_GameObject: {fileID: 1515235118749982}
   m_Enabled: 1
   serializedVersion: 7
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.81
-  m_Range: 80
+  m_Type: 0
+  m_Color: {r: 0.875, g: 0.96896553, b: 1, a: 1}
+  m_Intensity: 3
+  m_Range: 25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -349,34 +264,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeed: 5
-  verticalSpeed: 10
---- !u!114 &114633425970838752
+  verticalSpeed: 20
+--- !u!114 &114627832988855626
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373164443714578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0d21b3b65f0114d948c246446e607c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightController: {fileID: 114719090729727600}
-  minSize: 30
-  maxSize: 450
---- !u!114 &114719090729727600
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1823570662974884}
+  m_GameObject: {fileID: 1515235118749982}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 243d59928e3043a4e96fbd0675128db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLight: {fileID: 108402757977338794}
+  lightDecreaseOverTime: 0.005
   maxLightRange: 80
-  minLightRange: 0
-  defaultLightRange: 40
-  decreaseOverTime: 0.125
+  minLightRange: 20
+  defaultLightRange: 70
+  maxLightAngle: 70
+  minLightAngle: 25
+  defaultLightAngle: 70

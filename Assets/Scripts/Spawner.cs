@@ -1,54 +1,108 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+
+public enum Spawnable
+{
+    FOOD,
+    ENEMY
+}
+
+[System.Serializable]
+public class SpawnableObject {
+    [SerializeField]
+    Spawnable type;
+    [SerializeField]
+    public GameObject prefab;
+    [SerializeField]
+    [Range (0.0f, 1.0f)]
+    public float spawnRatio;
+}
+
 
 public class Spawner : MonoBehaviour {
 
-    private float spawnX;
-    private float spawnY;
+
+    Vector3 offsetFromCamera;
 
     [SerializeField]
-    private GameObject foodPrefab;
+    SpawnableObject[] spawnList;
     [SerializeField]
-    private GameObject enemyPrefab;
-
+    float spawnRateMin;
+    [SerializeField]
+    float spawnRateMax;
     Camera cam;
 
-    private void Start ()
+    private void Awake ()
     {
         cam = Camera.main;
-        StartCoroutine (FoodSpawner ());
-        StartCoroutine (EnemySpawner ());
+        offsetFromCamera = transform.position - cam.transform.position;
+
+        StartCoroutine (DoSpawn ());
     }
 
-    private Vector2 GetRandomPosition ()
+    private void Update ()
     {
-        spawnX = cam.ViewportToWorldPoint (new Vector3(1.0f, 0.0f, -cam.transform.position.z)).x + 10.0f;
-        spawnY = Random.Range (cam.ViewportToWorldPoint (new Vector3 (0.0f, 0.0f, -cam.transform.position.z)).y, cam.ViewportToWorldPoint (new Vector3 (0.0f, 1.0f, -cam.transform.position.z)).y);
-        return new Vector2 (spawnX, spawnY);
+        transform.position =  cam.transform.position + offsetFromCamera;
+    }
+
+    
+
+    private GameObject GetRandomSpawn ()
+    {
+        float r = Random.Range(0.0f, 1.0f);
+        float total = 0.0f;
+        foreach (SpawnableObject s in spawnList)
+        {
+            if (r < (s.spawnRatio / spawnList.Length) + total)
+            {
+                return s.prefab;
+            } else
+            {
+                total += s.spawnRatio / spawnList.Length;
+            }
+        }
+
+        return null;
+
     }
 
     private void Spawn (Vector2 position, GameObject prefab)
     {
         Instantiate (prefab, position, Quaternion.identity);
-        //Debug.Log ("Spawned fish at: " + position.ToString ());
     }
 
-    private IEnumerator FoodSpawner ()
+    private IEnumerator DoSpawn ()
     {
         while (true)
         {
-            Spawn (GetRandomPosition (), foodPrefab);
-            yield return new WaitForSeconds (Random.Range(.5f, 2.0f));
+            yield return new WaitForSeconds (Random.Range (spawnRateMin, spawnRateMax));
+
+            if (spawnList.Length > 0) {
+                GameObject go = GetRandomSpawn();
+                if (go != null) {
+                    Spawn (transform.position, go);
+                    Debug.Log ("Spawned " + go.name);
+                } else
+                {
+                    Debug.Log ("Failed to spawn");
+                }
+            } else
+            {
+                Debug.Log ("Spawn list is empty");
+            }
+
         }
     }
 
-    private IEnumerator EnemySpawner ()
+
+    private void OnDrawGizmos ()
     {
-        while (true)
-        {
-            Spawn (GetRandomPosition (), enemyPrefab);
-            yield return new WaitForSeconds (Random.Range (1.5f, 3.0f));
-        }
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawSphere (transform.position, 1.0f);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine (transform.position + Vector3.up * .5f + Vector3.right * .5f, transform.position + Vector3.down * .5f + Vector3.left * .5f);
+        Gizmos.DrawLine (transform.position + Vector3.up * .5f + Vector3.left * .5f, transform.position + Vector3.down * .5f + Vector3.right * .5f);
     }
 }

@@ -9,4 +9,11 @@ public class Sweeeper : MonoBehaviour {
         //Debug.Log ("collided");
         Destroy (collision.gameObject);
     }
+
+    private void OnDrawGizmos ()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube (this.transform.position, this.transform.lossyScale);
+
+    }
 }

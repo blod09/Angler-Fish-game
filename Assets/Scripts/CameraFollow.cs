@@ -15,7 +15,8 @@ public class CameraFollow : MonoBehaviour {
     }
     private void Update ()
     {
-        float newXPos = Mathf.Lerp (transform.position.x, target.position.x - offset.x, .7f );
+        //float newXPos = Mathf.Lerp (transform.position.x, target.position.x - offset.x, .7f );
+        float newXPos = target.position.x - offset.x;
         transform.position = new Vector3 (newXPos, transform.position.y, transform.position.z);
     }
 }

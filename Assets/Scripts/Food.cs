@@ -8,7 +8,7 @@ public class Food : MonoBehaviour {
     [SerializeField]
     private float _speedIncrease = 0.25f;
     [SerializeField]
-    private float _lightIncrease = 10.0f;
+    private float _lightIncrease = .1f;
 
     [HideInInspector]
     public float SpeedIncrease

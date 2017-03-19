@@ -12,7 +12,7 @@ public class PlayerCollisions : MonoBehaviour {
     private void Awake ()
     {
         playerMovement = GetComponent<PlayerMovement> ();
-        lightController = GetComponent<LightController> ();
+        lightController = GetComponentInChildren<LightController>();
     }
 
     private void OnTriggerEnter2D (Collider2D collision)
@@ -21,8 +21,7 @@ public class PlayerCollisions : MonoBehaviour {
             HandleFood (collision.gameObject.GetComponent<Food> ());
         else if (collision.gameObject.tag == "Enemy")
         {
-            if (gameObject.GetComponent<ScoreTracker> ().Score > BestScoreTracker.instance.bestScore)
-                BestScoreTracker.instance.bestScore = gameObject.GetComponent<ScoreTracker> ().Score;
+            gameObject.GetComponent<ScoreTracker> ().SetNewBestScore();
             SceneManager.LoadScene (0);
         }
     }
@@ -30,7 +29,7 @@ public class PlayerCollisions : MonoBehaviour {
     private void HandleFood (Food foodObject)
     {
         playerMovement.IncreaseSpeed (foodObject.SpeedIncrease);
-       // lightController.changeLightLevel (foodObject.LightIncrease);
+        lightController.increaseLightByPercentageOfMax (foodObject.LightIncrease);
 
         foodObject.Kill ();
     }

@@ -41,16 +41,27 @@ public class LightController : MonoBehaviour {
             changeLightLevel (maxLightRange,maxLightAngle);
     }
 
-    public void changeLightLevel (float range, float angle)
+    public void changeLightLevel (float newRange, float newAngle)
     {
-        myLight.range = range;
-        myLight.spotAngle = angle;
+        newRange = Mathf.Clamp (newRange, minLightRange, maxLightRange);
+        newAngle = Mathf.Clamp (newAngle, minLightAngle, maxLightAngle);
+
+        myLight.range = newRange;
+        myLight.spotAngle = newAngle;
     }
 
     public void changeLightOverTime ()
     {
         myLight.range = Mathf.Lerp (myLight.range, minLightRange, lightDecreaseOverTime);
         myLight.spotAngle = Mathf.Lerp (myLight.spotAngle, minLightAngle, lightDecreaseOverTime);
+
+    }
+
+    public void increaseLightByPercentageOfMax (float percent)
+    {
+        percent = Mathf.Clamp01 (percent);
+        myLight.range = Mathf.Clamp (myLight.range + maxLightRange * percent, minLightRange, maxLightRange);
+        myLight.spotAngle = Mathf.Clamp (myLight.spotAngle + maxLightAngle * percent, minLightAngle, maxLightAngle);
 
     }
 

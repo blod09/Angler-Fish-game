@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 39b35b8b5d48dd94782c00fcfd2b7c98
+timeCreated: 1489881759
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Deadly_depths_modular_Brokenup_0
+    21300002: Deadly_depths_modular_Brokenup_1
+    21300004: Deadly_depths_modular_Brokenup_2
+    21300006: Deadly_depths_modular_Brokenup_3
+    21300008: Deadly_depths_modular_Brokenup_4
+    21300010: Deadly_depths_modular_Brokenup_5
+    21300012: Deadly_depths_modular_Brokenup_6
+    21300014: Deadly_depths_modular_Brokenup_7
+    21300016: Deadly_depths_modular_Brokenup_8
+    21300018: Deadly_depths_modular_Brokenup_9
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 512
+    textureFormat: 13
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Deadly_depths_modular_Brokenup_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1153
+        width: 1025
+        height: 831
+      alignment: 9
+      pivot: {x: 0.37634405, y: 0.613506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Deadly_depths_modular_Brokenup_1
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 1446
+        width: 473
+        height: 393
+      alignment: 9
+      pivot: {x: 0.03885139, y: 0.44749767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Deadly_depths_modular_Brokenup_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 542
+        width: 640
+        height: 482
+      alignment: 9
+      pivot: {x: 0.08088644, y: 0.90361446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Deadly_depths_modular_Brokenup_9
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 532
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

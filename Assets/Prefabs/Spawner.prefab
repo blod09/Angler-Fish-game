@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706261575276894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.7, y: 2.3, z: 2.5553532}
+  m_LocalPosition: {x: 8.7, y: 2.61, z: 2.5553532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,11 +52,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnList:
-  - type: 0
-    prefab: {fileID: 1280873499037038, guid: 84b1510831c6dcd4485abcf8f7c9a540, type: 2}
-    spawnRatio: 0.75
-  - type: 1
-    prefab: {fileID: 1823484166975562, guid: bda945b63fc908441a3cc8040aa53f4b, type: 2}
-    spawnRatio: 0.25
+  - prefab: {fileID: 1280873499037038, guid: 84b1510831c6dcd4485abcf8f7c9a540, type: 2}
+    spawnRatio: 0.4
+  - prefab: {fileID: 1823484166975562, guid: bda945b63fc908441a3cc8040aa53f4b, type: 2}
+    spawnRatio: 0.4
+  - prefab: {fileID: 1100440422018462, guid: b6add4d58fae60749ae567f7797bbd71, type: 2}
+    spawnRatio: 0.1
+  - prefab: {fileID: 1898120488053086, guid: 2f9b6ec72bd91134fa34cf46b5a11aec, type: 2}
+    spawnRatio: 0.1
+  - prefab: {fileID: 0}
+    spawnRatio: 0.4
   spawnRateMin: 1
-  spawnRateMax: 3
+  spawnRateMax: 6

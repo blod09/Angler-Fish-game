@@ -23,6 +23,6 @@ public class Food : MonoBehaviour {
 
     public void Kill ()
     {
-        Destroy (gameObject);
+        Destroy (gameObject.transform.root.gameObject);
     }
 }

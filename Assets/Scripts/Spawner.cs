@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public enum Spawnable
-{
-    FOOD,
-    ENEMY
-}
 
 [System.Serializable]
 public class SpawnableObject {
-    [SerializeField]
-    Spawnable type;
+
     [SerializeField]
     public GameObject prefab;
     [SerializeField]
@@ -51,17 +45,21 @@ public class Spawner : MonoBehaviour {
 
     private GameObject GetRandomSpawn ()
     {
-        float r = Random.Range(0.0f, 1.0f);
-        float total = 0.0f;
+        float totalSpawnRatio = 0.0f;
         foreach (SpawnableObject s in spawnList)
         {
-            if (r < (s.spawnRatio / spawnList.Length) + total)
-            {
+            totalSpawnRatio += s.spawnRatio;
+        }
+
+        float r = Random.Range(0.0f, totalSpawnRatio);
+        float counter = 0.0f;
+
+        foreach (SpawnableObject s in spawnList)
+        {
+            if (r < s.spawnRatio + counter)
                 return s.prefab;
-            } else
-            {
-                total += s.spawnRatio / spawnList.Length;
-            }
+            else
+                counter += s.spawnRatio;
         }
 
         return null;

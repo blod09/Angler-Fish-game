@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void IncreaseSpeed (float ammount)
     {
-        float oldSpeed = horizontalSpeed;
+        //float oldSpeed = horizontalSpeed;
         horizontalSpeed += ammount;
 
         //Debug.Log ("Speed changed from: " + oldSpeed + " to: " + horizontalSpeed);

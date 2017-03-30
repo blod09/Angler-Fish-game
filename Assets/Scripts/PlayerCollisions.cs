@@ -17,9 +17,10 @@ public class PlayerCollisions : MonoBehaviour {
 
     private void OnTriggerEnter2D (Collider2D collision)
     {
-        if (collision.gameObject.tag == "Food")
+        Debug.Log (collision.gameObject.name);
+        if (collision.gameObject.GetComponent<Food>() != null)
             HandleFood (collision.gameObject.GetComponent<Food> ());
-        else if (collision.gameObject.tag == "Enemy")
+        else if (collision.gameObject.GetComponent<Enemy>() != null)
         {
             gameObject.GetComponent<ScoreTracker> ().SetNewBestScore();
             SceneManager.LoadScene (0);

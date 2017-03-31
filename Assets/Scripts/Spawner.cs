@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 
 [System.Serializable]
@@ -94,6 +97,7 @@ public class Spawner : MonoBehaviour {
         }
     }
 
+    #if UNITY_EDITOR
 
     private void OnDrawGizmos ()
     {
@@ -102,5 +106,6 @@ public class Spawner : MonoBehaviour {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine (transform.position + Vector3.up * .5f + Vector3.right * .5f, transform.position + Vector3.down * .5f + Vector3.left * .5f);
         Gizmos.DrawLine (transform.position + Vector3.up * .5f + Vector3.left * .5f, transform.position + Vector3.down * .5f + Vector3.right * .5f);
-    }
+}
+#endif
 }

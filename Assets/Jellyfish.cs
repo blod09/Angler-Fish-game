@@ -7,16 +7,14 @@ public class Jellyfish : Enemy {
     private float minAngle = 12.5f;
     private float maxAngle = 45.0f;
 
-    private float wobblingAmp = 1.0f;
+    private float wobblingAmp = 2.0f;
     private float wobblingFreq = .75f;
 
-    private float startingY;
 
 
     protected override void Awake () {
         base.Awake ();
         RotateToRandomPosition ();
-        startingY = transform.position.y;
 
 	}
 	
